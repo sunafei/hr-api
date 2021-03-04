@@ -105,11 +105,11 @@ public class InterviewRegisterService extends BaseService {
 		try {
 			// 面试登记表
 			ClassLoader cl = this.getClass().getClassLoader();
-			InputStream inputStream = cl.getResourceAsStream("classpath:template/registration.doc");
+			InputStream inputStream = cl.getResourceAsStream("classpath:doc/registration.doc");
 			//如果是Linux环境  这个inputStram就不会为空
 			if (null == inputStream) {
 				//走这里是因为是开发环境
-				File targetFile = ResourceUtils.getFile("classpath:template/registration.doc");
+				File targetFile = ResourceUtils.getFile("classpath:doc/registration.doc");
 				document = WordUtils.getDoc(targetFile);
 			} else {
 				document = new Document(inputStream);

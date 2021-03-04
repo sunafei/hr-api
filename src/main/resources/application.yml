@@ -1,0 +1,7 @@
+server:
+  port: 8091
+spring:
+  profiles:
+    active: prod
+  message:
+    encoding: UTF-8

@@ -29,6 +29,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class InterviewRegisterService extends BaseService {
@@ -124,7 +125,8 @@ public class InterviewRegisterService extends BaseService {
 			if (!tempDir.exists()) {
 				tempDir.mkdir();
 			}
-			tempFile = File.createTempFile("interviewRegister", ".pdf", tempDir);
+//			tempFile = File.createTempFile("interviewRegister", ".pdf", tempDir);
+			tempFile = new File(tempDir + "/" + UUID.randomUUID().toString() + ".pdf");
 			document.save(tempFile.getAbsolutePath(), SaveFormat.PDF);
 
 		} catch (Exception e) {
